@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add item to the list</h1>
+    <form  action="{% url 'forms1' %}" method="POST">
+        {% csrf_token %}
+        {{myform}}
+        <input type="submit">
+    </form>
+    <ul>
+        {% for foodlist in list1 %}
+        <li>
+            {{foodlist}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
